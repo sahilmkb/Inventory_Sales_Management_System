@@ -1,0 +1,190 @@
+/* === Global Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* FIX: Ensure main-content uses flex to enable vertical centering */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* FIX: Centering the box vertically in main-content */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically centers the box */
+    flex-grow: 1; /* Takes up all available vertical space */
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* END FIX */
+
+
+.auth-box {
+    background: white;
+    padding: 30px 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+}
+
+/* === Header === */
+.auth-header {
+    margin-bottom: 25px;
+}
+
+.auth-header p {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+/* === Tab Buttons === */
+.tab-buttons {
+    display: flex;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #d8c1e3;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #5d5d5d;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background: #8e7cc3;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* === Forms === */
+.auth-form {
+    text-align: left;
+    transition: all 0.4s ease;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    background-color: #fcfcfc;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #8e7cc3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(142, 124, 195, 0.2);
+}
+
+/* FIX: Spacing for button and link group */
+.auth-action-group {
+    margin-top: 5px; 
+    margin-bottom: 5px; 
+}
+
+.auth-submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #8e7cc3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.auth-submit-btn:hover { 
+    background-color: #7b6bb0;
+}
+.auth-submit-btn:active {
+    transform: translateY(1px);
+}
+
+/* FIX: Ensure the link is clearly visible below the button */
+.forgot-password-link {
+    text-align: right;
+    margin-top: 8px; /* Push it away from the button */
+    margin-bottom: 0; 
+}
+
+.forgot-password-link a {
+    color: #8e7cc3;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.forgot-password-link a:hover {
+    text-decoration: underline;
+}
+
+/* New Styles for Success/Forgot Password Messages */
+.verification-message {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f7f3ff;
+    border-left: 3px solid #8e7cc3;
+    border-radius: 4px;
+}
+
+/* Visibility classes */
+.hidden-form {
+    display: none;
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.active-form {
+    display: block;
+    opacity: 1;
+    height: auto;
+}
+
+/* Footer Text */
+.auth-footer-text {
+    margin-top: 25px;
+    font-size: 0.75rem;
+    color: #95a5a6;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retail Management Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="logo"><h2>RetailDash</h2></div>
+      <ul class="nav-menu">
+        <li class="nav-item active">
+          <a href="#" class="nav-link">
+            <span class="nav-icon">📊</span>
+            <span class="nav-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="../inventory/inventory.html" class="nav-link">
+            <span class="nav-icon">📦</span>
+            <span class="nav-text">Inventory</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="../retail-management/rm.html" class="nav-link">
+            <span class="nav-icon">🏪</span>
+            <span class="nav-text">Retail Management</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="page-header">
+        <div class="header-left">
+          <h1>Dashboard Overview</h1>
+          <p>Real-time business metrics and alerts</p>
+        </div>
+      </div>
+
+      <!-- === Top Metrics === -->
+      <div class="top-row" id="metrics">
+        <div class="metric-card">
+          <div class="metric-icon">📦</div>
+          <h3>Total Products Sold</h3>
+          <p class="metric-value" id="total-products-sold">--</p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">💰</div>
+          <h3>Total Sales</h3>
+          <p class="metric-value" id="total-sales">--</p>
+          <span class="metric-change" id="sales-change">--%</span>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">📈</div>
+          <h3>Today's Revenue</h3>
+          <p class="metric-value" id="todays-revenue">--</p>
+          <span class="metric-change" id="revenue-change">--%</span>
+        </div>
+
+        <div class="metric-card alert">
+          <div class="metric-icon">🛒</div>
+          <h3>Today's Sale</h3>
+          <p class="metric-value" id="todays-sale">--</p>
+        </div>
+
+        <div class="metric-card alert">
+          <div class="metric-icon">✅</div>
+          <h3>Products Sold Today</h3>
+          <p class="metric-value" id="products-sold-today">--</p>
+        </div>
+      </div>
+
+      <!-- === Middle Row === -->
+      <div class="middle-row">
+        <!-- Recent Purchases -->
+        <div class="section-card">
+          <h3>Recent Purchases</h3>
+          <div class="purchase-list" id="recent-purchases">
+            <!-- Filled dynamically -->
+          </div>
+        </div>
+
+        <!-- Top Selling Products -->
+        <div class="section-card">
+          <h3>Top Selling Products</h3>
+          <div class="product-list" id="top-products">
+            <!-- Filled dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- === Bottom Row === -->
+      <div class="bottom-row">
+        <!-- Charts Section -->
+        <div class="chart-card chart-section">
+          <div class="chart-header">
+            <h3>Performance Analytics</h3>
+            <div class="chart-toggle">
+              <button class="toggle-btn active" data-chart="sales">Sales Trend</button>
+              <button class="toggle-btn" data-chart="products">Product Performance</button>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="salesChart" class="chart active"></canvas>
+            <canvas id="productChart" class="chart"></canvas>
+          </div>
+        </div>
+
+        <!-- Stock Alerts -->
+        <div class="section-card alerts-section">
+          <h3>Stock Alerts</h3>
+          <div class="alerts-list" id="stock-alerts">
+            <!-- Filled dynamically -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

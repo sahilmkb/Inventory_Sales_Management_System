@@ -1,0 +1,346 @@
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f6fa;
+    color: #333;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar (Soft Purple Theme) */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(180deg, #8e7cc3 0%, #a18fcf 100%);
+    color: white;
+    padding: 15px 0;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.logo {
+    padding: 0 20px 15px;
+    border-bottom: 1px solid #b7a2db;
+    margin-bottom: 15px;
+}
+
+.logo h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-item {
+    margin-bottom: 3px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #ddd6f7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #a18fcf;
+    color: white;
+}
+
+.nav-item.active .nav-link {
+    background-color: #b7a2db;
+    color: white;
+    border-left: 4px solid #8e7cc3;
+}
+
+.nav-icon {
+    font-size: 1.1rem;
+    margin-right: 12px;
+    width: 18px;
+    text-align: center;
+}
+
+.nav-text {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* Section Card (For the table) */
+.section-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Inventory Header (No Card/Background) */
+.inventory-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 25px; /* Spacing below the title */
+}
+
+.inventory-header h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    font-weight: 600;
+    padding-bottom: 0;
+}
+
+/* --- Inventory Table --- */
+.inventory-table {
+    width: 100%;
+    table-layout: fixed; /* Crucial for controlling column width */
+    border-collapse: collapse;
+}
+
+.inventory-table thead {
+    background-color: #8e7cc3;
+    color: white;
+}
+
+.inventory-table th,
+.inventory-table td {
+    padding: 14px 16px;
+    text-align: center; /* Center alignment for all content */
+    border-bottom: 1px solid #ecf0f1;
+    font-size: 0.95rem;
+}
+
+/* Column Widths for Equal Spacing (100% / 6 columns) */
+.inventory-table .col-id,
+.inventory-table th:nth-child(1),
+.inventory-table td:nth-child(1) { width: 16.666%; } 
+
+.inventory-table .col-name,
+.inventory-table th:nth-child(2),
+.inventory-table td:nth-child(2) { width: 16.666%; } 
+
+.inventory-table .col-category,
+.inventory-table th:nth-child(3),
+.inventory-table td:nth-child(3) { width: 16.666%; }
+
+.inventory-table .col-stock,
+.inventory-table th:nth-child(4),
+.inventory-table td:nth-child(4) { width: 16.666%; } 
+
+.inventory-table .col-price,
+.inventory-table th:nth-child(5),
+.inventory-table td:nth-child(5) { width: 16.666%; } 
+
+.inventory-table .col-status,
+.inventory-table th:nth-child(6),
+.inventory-table td:nth-child(6) { 
+    width: 16.668%; 
+} 
+
+.inventory-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* --- Status Button Styles --- */
+.status-btn {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    /* max-width helps keep the badge compact in the centered cell */
+    max-width: 150px; 
+    display: inline-block; /* Required if the parent is centered */
+}
+
+/* Status Colors */
+.status.in-stock {
+    background: #e8f5e8;
+    color: #27ae60;
+}
+
+.status.low-stock {
+    background: #fff8e1;
+    color: #efba65;
+}
+
+.status.out-stock {
+    background: #ffebee;
+    color: #e74c3c;
+}
+.status-btn:hover {
+    opacity: 0.8;
+}
+
+/* --- Modal Styles --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.modal-header {
+    margin-bottom: 20px;
+}
+
+.modal-header h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.modal-header p {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.close-btn-new {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+}
+
+.close-btn-new:hover,
+.close-btn-new:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form Styles */
+.form-group-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    text-align: center; /* Center text in modal inputs */
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #8e7cc3;
+}
+
+.update-status-modal-btn {
+    width: 100%;
+    padding: 12px;
+    background: #8e7cc3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.update-status-modal-btn:hover {
+    background: #6b5a7d;
+    transform: translateY(-2px);
+}
+
+/* ====== STOCK STATUS COLORS ====== */
+
+.status-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* In Stock → Green */
+.status-btn.in-stock {
+  background-color: #d4edda;
+  color: #27ae60;
+  border: 1px solid #c3e6cb;
+}
+
+/* Low Stock → Amber/Yellow */
+.status-btn.low-stock {
+  background-color: #fff3cd;
+  color: #efba65;
+  border: 1px solid #ffeeba;
+}
+
+/* Out of Stock → Red */
+.status-btn.out-stock {
+  background-color: #f8d7da;
+  color: #e74c3c;
+  border: 1px solid #f5c6cb;
+}
+
+/* Hover effects */
+.status-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}

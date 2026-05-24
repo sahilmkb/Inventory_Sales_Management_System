@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail POS - Product Management</title>
+    <link rel="stylesheet" href="../dashboard/dashboard.css">
+    <link rel="stylesheet" href="pos.css"> 
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>RetailDash</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../dashboard/dashboard.html" class="nav-link">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../inventory/inventory.html" class="nav-link">
+                        <span class="nav-icon">📦</span>
+                        <span class="nav-text">Inventory</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🛒</span>
+                        <span class="nav-text">POS System</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="page-header">
+                <div class="header-left">
+                    <h1>Point of Sale & Product Management</h1>
+                    <p>Quickly access core product and sales features.</p>
+                </div>
+                <div class="header-right">
+                    <button class="logout-btn-styled" onclick="window.location.href='./rm.html'">Log Out</button>
+                </div>
+            </div>
+
+            <div class="action-card-grid">
+                <div class="action-card" id="addProductCard">
+                    <div class="card-icon">➕</div>
+                    <h3 class="card-title">Add New Product</h3>
+                    <p class="card-description">Create a new entry for sale.</p>
+                </div>
+
+                <div class="action-card" id="removeProductCard">
+                    <div class="card-icon">🗑️</div>
+                    <h3 class="card-title">Remove Product</h3>
+                    <p class="card-description">Discontinue or delete inventory.</p>
+                </div>
+
+                <div class="action-card" id="changePriceCard">
+                    <div class="card-icon">🏷️</div>
+                    <h3 class="card-title">Change Price</h3>
+                    <p class="card-description">Adjust product retail price.</p>
+                </div>
+
+                <div class="action-card" id="updateStockCard">
+                    <div class="card-icon">📦</div>
+                    <h3 class="card-title">Stock Update</h3>
+                    <p class="card-description">Receive new stock deliveries.</p>
+                </div>
+                
+                <div class="action-card" id="productHoldCard">
+                    <div class="card-icon">✋</div>
+                    <h3 class="card-title">Product Hold / Unhold</h3>
+                    <p class="card-description">Hold or Unhold product.</p>
+                </div>
+            </div>
+            
+            <section class="panel product-list-panel">
+                <h2>Current Inventory View</h2>
+                <input type="text" id="productSearch" placeholder="Search product by name, ID, or SKU...">
+                
+                <div class="product-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Supplier</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventoryTableBody">
+                            <!-- Table rows will be dynamically loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Modal -->
+    <div id="actionModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+            <div id="modalBody" class="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- JS Loaded at the end -->
+    <script src="pos.js"></script>
+</body>
+</html>

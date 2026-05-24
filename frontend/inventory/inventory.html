@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="inventory.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>RetailDash</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../dashboard/dashboard.html" class="nav-link">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="../inventory/inventory.html" class="nav-link">
+                        <span class="nav-icon">📦</span>
+                        <span class="nav-text">Inventory</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../retail-management/rm.html" class="nav-link">
+                        <span class="nav-icon">🏪</span>
+                        <span class="nav-text">Retail Management</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="inventory-header">
+                <h3>Inventory Management</h3>
+            </div>
+
+            <div class="section-card">
+                <table class="inventory-table">
+                    <thead>
+                        <tr>
+                            <th class="col-id">Product ID</th>
+                            <th class="col-name">Product Name</th>
+                            <th class="col-category">Category</th>
+                            <th class="col-stock">Stock</th>
+                            <th class="col-price">Price</th>
+                            <th class="col-status">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryTableBody">
+    <!-- Table rows will be dynamically loaded from backend -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <div id="statusModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn-new">&times;</span>
+            <div class="modal-header">
+                <h3 id="modalProductId">Update Stock for #101</h3>
+                <p>Adjust current stock level and update product status.</p>
+            </div>
+            <form id="statusForm">
+                <input type="hidden" id="currentProductId">
+                <input type="hidden" id="currentMinStock">
+
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="currentStockDisplay">Current Stock</label>
+                        <input type="text" id="currentStockDisplay" value="" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="stockAdjustment">Stock Update</label>
+                        <input type="number" id="stockAdjustment" value="0" placeholder="e.g. 10 (Add) or -5 (Subtract)">
+                    </div>
+                </div>
+
+                <button type="submit" class="update-status-modal-btn">Apply Stock & Update Status</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="inventory.js"></script>
+</body>
+</html>

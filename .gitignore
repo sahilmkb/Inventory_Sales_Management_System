@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment files
+.env
+backend/.env
+
+# OS/editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Local assistant history
+.aider.chat.history.md
+.aider.input.history
+
+# Logs
+*.log
+

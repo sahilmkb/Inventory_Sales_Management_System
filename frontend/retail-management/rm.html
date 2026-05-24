@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Management - Access</title>
+    <link rel="stylesheet" href="../dashboard/dashboard.css">
+    <link rel="stylesheet" href="rm.css"> 
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>RetailDash</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../dashboard/dashboard.html" class="nav-link">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../inventory/inventory.html" class="nav-link">
+                        <span class="nav-icon">📦</span>
+                        <span class="nav-text">Inventory</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">🏪</span>
+                        <span class="nav-text">Retail Management</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="page-header">
+                <div class="header-left">
+                    <h1>Retail Management Access</h1>
+                    <p>Login or Register to access the Point of Sale system</p>
+                </div>
+            </div>
+
+            <div class="auth-container">
+                <div class="auth-box">
+                    <div class="auth-header">
+                        <p id="authSubtitle">Secure sign-in for authorized personnel</p>
+                    </div>
+                    
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="login">Login</button>
+                        <button class="tab-btn" data-tab="register">Register</button>
+                    </div>
+                    
+                    <!-- LOGIN FORM -->
+                    <form id="loginForm" class="auth-form active-form">
+                        <div class="form-group">
+                            <label for="loginUniqueId">Unique ID</label>
+                            <input type="text" id="loginUniqueId" placeholder="Enter your unique ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                        </div>
+                        <div class="auth-action-group">
+                            <button type="submit" class="auth-submit-btn">Sign In</button>
+                        </div>
+                    </form>
+                    
+                    <!-- REGISTER FORM -->
+                    <form id="registerForm" class="auth-form hidden-form">
+                        <div class="form-group">
+                            <label for="regEmail">Email Address</label>
+                            <input type="email" id="regEmail" placeholder="Enter a valid email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regPassword">Password</label>
+                            <input type="password" id="regPassword" placeholder="Create a password" required>
+                        </div>
+                        <div class="auth-action-group">
+                            <button type="submit" class="auth-submit-btn">Register</button>
+                        </div>
+                    </form>
+
+                    <!-- VERIFICATION -->
+                    <form id="verificationForm" class="auth-form hidden-form">
+                        <p class="verification-message">
+                            Registration complete! Check your email for your <strong>Unique ID</strong> required for login.
+                        </p>
+                        <button type="button" class="auth-submit-btn" id="goToLoginBtn">Go to Login</button>
+                    </form>
+
+                    <p class="auth-footer-text">This system is for authorized personnel only.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="rm.js"></script>
+</body>
+</html>
