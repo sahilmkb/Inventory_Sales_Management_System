@@ -145,12 +145,6 @@ Do not commit real credentials or local environment files.
 
 This project is organized for GitHub upload and local development as a demo project.
 
-Future improvements:
-
-- Restrict CORS origins before deployment
-- Add automated tests
-- Replace automatic schema creation with migrations for production use
-
 ## License
 
 This project is licensed under the MIT License. See `LICENSE` for details.
